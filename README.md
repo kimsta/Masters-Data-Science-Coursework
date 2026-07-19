@@ -63,11 +63,11 @@ An end-to-end data pipeline, statistical inference engine, and interactive dashb
 ## Technical Skills
 
 * **Languages:** Python, R, SQL
-* **Deep Learning & Privacy:** PyTorch, PyTorch Geometric, Opacus
-* **Graph & Geospatial:** GeoPandas, NetworkX, NetworKit, pandana, igraph, graph-tool
-* **ML & Advanced Statistics:** Scikit-learn, SciPy, statsmodels, tidymodels, glmnet, spaCy
-* **Data Engineering & Databases:** FastAPI, Pydantic, SQLite, Docker, Kubernetes, Spark, MLflow
-* **Frontend & Interactive UI:** React, Vite, Shiny, bslib, Plotly.js, DT, Matplotlib
+* **Machine Learning & Deep Learning:** PyTorch, Scikit-learn, spaCy, Opacus, PyTorch Geometric
+* **Advanced Statistics & Inference:** SciPy, statsmodels, tidymodels, glmnet, tidyverse, pwr
+* **Graph & Geospatial Analytics:** GeoPandas, NetworkX, NetworKit, pandana, igraph, graph-tool
+* **Data Engineering & Architecture:** FastAPI, Pydantic V2, SQLite (RSQLite/DBI), Docker, Google Gemini API
+* **UI & Data Visualization:** React, Vite, R Shiny, bslib, Plotly.js, DT, Matplotlib
 * **Version Control:** Git, GitHub
 
 ---
