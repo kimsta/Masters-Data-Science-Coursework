@@ -1,6 +1,6 @@
 # Kim Ståhlberg | Data Science Portfolio
 
-Hi, I'm Kim, a Data Scientist completing my Master's in Data Science at the University of Helsinki with a background in Statistics (BSc). This repository showcases my project work in machine learning, graph analytics, and statistical modeling.
+Data Scientist with an MSc in Data Science (University of Helsinki, 2026) and a BSc in Statistics. This repository showcases production-ready architecture, applied machine learning, graph analytics, and statistical modeling.
 
 **Contact:** [stahlberg.kim@gmail.com](mailto:stahlberg.kim@gmail.com)
 
@@ -8,67 +8,67 @@ Hi, I'm Kim, a Data Scientist completing my Master's in Data Science at the Univ
 
 ## Featured Projects
 
-### 1. High-Performance Travel Network Analysis (Master's Thesis)
-For my Master's thesis, titled "An Algorithmic Comparison for Efficiently Computing Travel-Time Matrices on a Multi-Modal Network," I am expanding on a project I began during my traineeship at a public research institute. The goal is to solve a computational bottleneck in simulation pipelines by developing and evaluating a high-performance Python framework for large-scale network analysis.
+### 1. Algorithmic Trade-Offs in Multi-Modal Travel Cost Computation (Master's Thesis)
+*Grade: 5/5 | University of Helsinki*
+A systems-level trade-off analysis evaluating classical graph algorithms against neural approximation for large-scale routing across a historical, multi-modal network.
+* **Architecture:** Engineered a Siamese Interaction Network for Regression (SINfR) to reframe memory-bound graph traversal as a parallelized tensor operation.
+* **Performance:** Bypassed the $O(N^2)$ memory constraints of traditional CPU-bound routing, reducing peak memory usage to a constant ~1 GB while achieving a throughput of ~5.8 million paths per second on GPU.
+* **Repository:** [View Technical Specs & Research Link](https://github.com/kimsta/historical-multimodal-routing-msc-thesis)
+* **Tech Stack:** Python, PyTorch, GeoPandas, NetworkX, NetworKit, pandana.
 
-* **Foundational Work & Preliminary Results:** The foundational data pipeline was engineered during my traineeship and has already yielded a strong preliminary ~72x performance speedup over baseline methods by leveraging C-backed libraries like `igraph` over standard pure-Python implementations.
+### 2. Quantitative Integration Engine
+A full-stack, polymorphic Monte Carlo integration engine built to dynamically evaluate complex probability mixture models without deterministic numerical quadrature.
+* **Backend:** Built with FastAPI and SciPy, utilizing strictly typed Pydantic V2 Discriminated Unions to enforce mathematical parameters before execution.
+* **Frontend & Deployment:** Decoupled React/Vite SPA with Plotly.js visualization, orchestrated via a multi-stage Docker build and unified bridged network.
+* **Repository:** [View and run the code here](https://github.com/kimsta/quant-integration-engine)
+* **Tech Stack:** FastAPI, React, Docker, SciPy, Pydantic.
 
-* **Thesis Research:** The current thesis work focuses on a rigorous comparative analysis of different algorithmic paradigms. This research evaluates the trade-offs between classic algorithms (**Dijkstra**), advanced exact methods (**Contraction Hierarchies**), and learned approximation methods (**Graph Neural Networks**).
-
-* **Performance Benchmark:** A public notebook demonstrating the core optimization technique from the foundational work **[is available here](https://github.com/kimsta/Python-Graph-Benchmark)**.
-* **Tech Stack:** Python, PyTorch, PyTorch Geometric, geopandas, python-igraph, graph-tools, NetworkX, NetworKit.
-
-### 2. Algorithmic Fairness Audit: Healthcare Risk Prediction
+### 3. Algorithmic Fairness Audit: Healthcare Risk Prediction
 A rigorous fairness audit and mitigation pipeline for a Heart Failure prediction model, designed to identify and correct safety disparities in medical diagnostics.
-
-* **The Problem:** Through an intersectional audit (Age × Sex), I discovered a critical 4.5x Safety Disparity for young female patients compared to the reference group (older males). The standard model missed nearly 30% of heart failure cases in young women.
-* **The Solution:** I engineered a hybrid mitigation strategy using **Decoupled Classifiers** and **Threshold Tuning**. By training separate models for demographic subgroups and adjusting the decision boundary for the disadvantaged group, I successfully reduced the safety risk by ~50% without requiring additional data collection.
-* **Project Repository:** [View and run the code here](https://github.com/kimsta/fairness_bias_audit)
+* **The Problem:** Identified a critical 4.5x Safety Disparity for young female patients compared to older males via intersectional auditing.
+* **The Solution:** Engineered a hybrid mitigation strategy using Decoupled Classifiers and Threshold Tuning, reducing safety risk by ~50% without requiring additional data collection.
+* **Repository:** [View and run the code here](https://github.com/kimsta/fairness_bias_audit)
 * **Tech Stack:** Python, Scikit-learn, Pandas, Fairness Metrics.
 
-### 3. Privacy-Preserving ML & Membership Inference Defense
+### 4. Privacy-Preserving ML & Membership Inference Defense
 A security audit demonstrating data leakage in Neural Networks and implementing Differential Privacy (DP-SGD) to secure the model against attacks.
-
-* **The Attack:** I simulated a **Membership Inference Attack (MIA)** using a counterfactual "Shadow Model" approach. The experiment proved that standard SGD models memorize specific training examples, creating a critical privacy leak (Privacy Gap: +0.13).
-* **The Defence:** I implemented **Differential Privacy** using the **Opacus** library ($\epsilon=1.0$). The audit confirmed that the DP-protected model successfully masked the presence of individual data points (Privacy Gap: ~0.00), rendering the attack ineffective while maintaining >90% accuracy.
-* **Project Repository:** [View and run the code here](https://github.com/kimsta/privacy_audit_mia)
+* **The Attack:** Simulated a Membership Inference Attack (MIA) via a counterfactual "Shadow Model," proving standard SGD models leak critical training data.
+* **The Defense:** Implemented Differential Privacy (Opacus, $\epsilon=1.0$), successfully masking individual data points (Privacy Gap: ~0.00) while maintaining >90% validation accuracy.
+* **Repository:** [View and run the code here](https://github.com/kimsta/privacy_audit_mia)
 * **Tech Stack:** Python, PyTorch, Opacus, Scikit-learn.
 
+### 5. Automated NLP Pipeline for Text Classification (VATT)
+Designed and delivered a complete two-stage NLP pipeline to classify thousands of unstructured, Finnish-language free-form text entries for a public research institute.
+* **Architecture:** Programmatic labeling utilizing the Google Gemini API to bootstrap training data for custom `spaCy` models.
+* **Outcome:** The first-stage binary filter achieved a 93% F1-score, and the final multi-label classifier achieved a ~90% F1-score, automating a massive manual structuring task.
+* **Repository:** [View Public Sentiment Demo here](https://github.com/kimsta/spaCy_NLP_Sentiment_Demo)
+* **Tech Stack:** Python, spaCy, Scikit-learn, Google Gemini API.
 
-### 4. NLP Pipeline for Automated Text Classification
-In a trainee project at VATT, I designed and delivered a complete two-stage NLP pipeline to classify thousands of unstructured, Finnish-language free form text entries.
+### 6. Automated ANOVA Pipeline (BioMedicum Helsinki)
+Architected an automated statistical pipeline in R for the Koistinaho Lab to process complex experimental biomedical data.
+* **Architecture:** Developed the core analytics engine and data validation logic to automatically select and execute distinct ANOVA models based on dynamic user input.
+* **Repository:** [View Core Logic Demo here](https://github.com/kimsta/R_Automated_ANOVA)
+* **Tech Stack:** R, Tidyverse, rstatix, broom, R Shiny.
 
-* **My Contribution:** I managed the end-to-end workflow, including a modern approach to programmatic labeling using the Google Gemini API, and training `spaCy` models for both stages of the pipeline.
-* **Outcome:** The first-stage binary filter achieved a **93% F1-score**, and the final multi-label classifier achieved a **~90% F1-score** on its primary categories, successfully automating a massive manual data-structuring task.
-* **Public Demo:** A public version of this pipeline, demonstrating the same techniques on a Finnish sentiment dataset, **[is available here](https://github.com/kimsta/spaCy_NLP_Sentiment_Demo)**.
-* **Tech Stack:** Python, spaCy, scikit-learn, Pandas, Google Gemini API.
-
-
-### 5. Automated ANOVA Pipeline for BioMedicum Helsinki
-As part of a Master's level Data Science Project, our team developed a user-friendly statistical pipeline in R for the Koistinaho Lab to automate the analysis of complex experimental data.
-
-* **My Contribution:** I led the development of the core R analytics engine, architecting data cleaning validation and the primary analysis logic which automatically selects distinct ANOVA models based on user input.
-* **Outcome:** A reproducible tool that significantly reduced manual analysis time for the researchers.
-* **Public Demo:** An R Markdown file demonstrating the core logic of this automated pipeline, **[is available here](https://github.com/kimsta/R_Automated_ANOVA)**.
-* **Tech Stack:** R, Tidyverse, rstatix, broom, R Shiny
+### 7. Padel Analytics & Match Predictor (Interactive Dashboard)
+An end-to-end data pipeline, statistical inference engine, and interactive dashboard built to quantify player skill and predict pairwise match outcomes from sparse amateur sports data.
+* **Architecture:** Custom ETL pipeline routing raw text scores into a local SQLite database, serving an interactive `Shiny` frontend.
+* **Statistical Modeling:** Implemented a Bradley-Terry model to predict pairwise outcomes. Applied Penalized Ridge Regression (L2 penalty) via `tidymodels` to solve complete separation and multicollinearity inherent in sparse datasets. 
+* **Inference:** Utilized Beta-Binomial models for Bayesian updating to quantify the mathematical certainty of true skill levels across limited sample sizes.
+* **Repository:** [View Technical Specs Here](https://github.com/kimsta/Padel_Project) | **Live App:** [View Interactive Dashboard](https://kimst.shinyapps.io/padel-stats/)
+* **Tech Stack:** R, Shiny, SQLite, tidymodels, glmnet.
 
 ---
+
 ## Technical Skills
 
 * **Languages:** Python, R, SQL
-* **Python Libraries:**
-    * **Deep Learning & Privacy:** PyTorch, PyTorch Geometric, Opacus
-    * **ML & NLP:** scikit-learn, spaCy, statsmodels, joblib
-    * **Data & Geospatial:** pandas, numpy, geopandas
-    * **Graph & Network:** igraph, graph-tool, NetworkX, NetworKit
-    * **Visualization:** matplotlib
-* **R Libraries:** Shiny, R Markdown, Tidyverse (dplyr, ggplot2), knitr, pwr, rstatix, broom, Stan
-* **APIs & Cloud:** Google Gemini API
-* **MLOps & Big Data:** Docker, Kubernetes (K8s), MLflow, Spark
+* **Deep Learning & Privacy:** PyTorch, PyTorch Geometric, Opacus
+* **Graph & Geospatial:** GeoPandas, NetworkX, NetworKit, pandana, igraph, graph-tool
+* **ML & Advanced Statistics:** Scikit-learn, SciPy, statsmodels, tidymodels, glmnet, spaCy
+* **Data Engineering & Databases:** FastAPI, Pydantic, SQLite, Docker, Kubernetes, Spark, MLflow
+* **Frontend & Interactive UI:** React, Vite, Shiny, bslib, Plotly.js, DT, Matplotlib
 * **Version Control:** Git, GitHub
 
 ---
-
-## License
-
-Copyright (c) 2025 Kim Ståhlberg. Licensed under the MIT License.
+*Copyright (c) 2026 Kim Ståhlberg. Licensed under the MIT License.*
